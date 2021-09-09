@@ -38,7 +38,7 @@ export class TasksService {
     const task = this.tasks.find((task) => task.id === id);
 
     if (!task) {
-      throw new NotFoundException(`Task with this ID ${id} not found`);
+      throw new NotFoundException(`Task with this ID ${id} is not found`);
     }
 
     return task;
@@ -65,6 +65,7 @@ export class TasksService {
   }
 
   deleteTask(id: string): void {
-    this.tasks.filter((task) => task.id !== id);
+    const taskFound = this.getTaskById(id);
+    this.tasks.filter((task) => task.id !== taskFound.id);
   }
 }
