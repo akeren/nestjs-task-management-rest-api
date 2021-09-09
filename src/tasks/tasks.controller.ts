@@ -12,9 +12,8 @@ import {
 import { TasksService } from '@src/tasks/tasks.service';
 import { Task } from '@src/tasks/task.model';
 import { CreateTaskDto } from '@src/tasks/dto/create-task.dto';
-import { TaskStatus } from '@src/tasks/task.model';
 import { GetTasksFilterDto } from '@src/tasks/dto/get-tasks-filter.dto';
-import { UpdateTaskStatusDto } from './dto/update-task-status.dto';
+import { UpdateTaskStatusDto } from '@src/tasks/dto/update-task-status.dto';
 
 @Controller('tasks')
 export class TasksController {
