@@ -32,6 +32,12 @@ I decided to explore the elegance of [Nest](https://github.com/nestjs/nest) by b
 $ npm install
 ```
 
+
+
+```bash
+# To run PostgreSQL on Docker, run the command below in your Terminal
+$ docker run --name container_name -p 5432:5432 -e POSTGRES_PASSWORD=your_password -d postgres
+```
 ## Running the app
 
 ```bash
