@@ -13,7 +13,7 @@ export class TasksService {
     private tasksRepository: TasksRepository,
   ) {}
 
-  getTasks(taskFilterDto: GetTasksFilterDto): Promise<Task[]> {
+  async getTasks(taskFilterDto: GetTasksFilterDto): Promise<Task[]> {
     return this.tasksRepository.getTasks(taskFilterDto);
   }
 
@@ -27,7 +27,7 @@ export class TasksService {
     return task;
   }
 
-  createTask(createTaskDto: CreateTaskDto): Promise<Task> {
+  async createTask(createTaskDto: CreateTaskDto): Promise<Task> {
     return this.tasksRepository.createTask(createTaskDto);
   }
 
