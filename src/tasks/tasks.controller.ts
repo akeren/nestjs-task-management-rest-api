@@ -20,23 +20,23 @@ export class TasksController {
   constructor(private taskService: TasksService) {}
 
   @Get()
-  getTasks(@Query() taskFileterDto: GetTasksFilterDto): Promise<Task[]> {
+  async getTasks(@Query() taskFileterDto: GetTasksFilterDto): Promise<Task[]> {
     return this.taskService.getTasks(taskFileterDto);
   }
 
   @Get('/:id')
-  getTaskById(@Param('id') id: string): Promise<Task> {
+  async getTaskById(@Param('id') id: string): Promise<Task> {
     return this.taskService.getTaskById(id);
   }
 
   @Post()
-  createTask(@Body() createTaskDto: CreateTaskDto): Promise<Task> {
+  async createTask(@Body() createTaskDto: CreateTaskDto): Promise<Task> {
     return this.taskService.createTask(createTaskDto);
   }
 
   @Patch('/:id/status')
   @HttpCode(202)
-  updateTaskStatus(
+  async updateTaskStatus(
     @Param('id') id: string,
     @Body() updateTaskStatusDto: UpdateTaskStatusDto,
   ): Promise<Task> {
@@ -46,7 +46,7 @@ export class TasksController {
 
   @Delete('/:id')
   @HttpCode(204)
-  deleteTask(@Param('id') id: string): Promise<void> {
+  async deleteTask(@Param('id') id: string): Promise<void> {
     return this.taskService.deleteTask(id);
   }
 }
